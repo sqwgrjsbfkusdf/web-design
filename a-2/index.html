@@ -6,6 +6,7 @@
     <title>JUST 쇼핑몰</title>
     <link rel="stylesheet" href="./css/style.css">
     <script src="./script/jquery-1.12.4.js"></script>
+    <script src="./script/main.js"></script>
 </head>
 <body>
     <div class="wrap">
@@ -114,54 +115,5 @@
         <p>즐거운 쇼핑 환경을 위해 항상 노력하는 JUST 쇼핑몰입니다. 고객님들께 한 단계 더 나아가 보답하는 ON쇼핑몰이 되고자신규회원 대상 10% 할인 이벤트를 실시하고 있습니다. 웹과 모바일에서 모두 이용 가능하며, 수준 높은 서비스를 위해 앞으로도 꾸준히 노력할 것을 약속드립니다.</p>
         <button id="closeModal">닫기</button>
     </div>
-
-    <script>
-        $(function(){
-            // gnb
-            $(".gnb").hover(
-                function() {
-                    $(".sub").stop().slideDown()
-                },
-                function() {
-                    $(".sub").stop().slideUp()
-                }
-            )
-
-            // modal
-            $("#showModal").click(function(){
-                $(".modal").show()
-            })
-
-            $("#closeModal").click(function(){
-                $(".modal").hide()
-            })
-
-            // slide
-            setInterval(function(){
-                $(".slides").animate({top: "-100%"}, function(){
-                    $(this).append($(".slide").eq(0))
-                    $(this).css("top", 0)
-                })
-            }, 3000)
-
-            // tab
-            console.log($(".tab_title h3"))
-            console.log($(".tab_contents .item"))
-
-
-
-
-            
-            $(".tab_title h3").click(function(){
-                $(".tab_title h3").removeClass("active")
-                $(this).addClass("active")
-
-                var idx = $(this).index()
-                $(".tab_contents .item").hide()
-                $(".tab_contents .item").eq(idx).show()
-            })
-
-        })        
-    </script>
 </body>
 </html>
